@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 const path = require('path');
 const requests = require("requests")
 const fs = require('fs');
-
+let port = process.env.PORT||8000;
 
 app.use(express.urlencoded());
 app.set('view engine','hbs');
@@ -148,6 +148,6 @@ app.get('*',(req,res)=>{
     console.log('page not found');
 })
 
-app.listen(5000,()=>{
+app.listen(port,()=>{
     console.log("our server is running on the sky port 3000");
 })
